@@ -1,0 +1,69 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>PhoneGap WebOS</title>
+ 
+	<script type="text/javascript" src="phonegap-1.0.0.js"></script>   
+	<script type="text/javascript"> 		
+ 		function onLoad() {
+ 		 
+	    	document.addEventListener("deviceready", createDB, false);
+
+		} 
+ 
+		// create the db instance
+		function createDB() {  
+			// creates or opens a new db connection
+			var db = window.openDatabase("test", "1.0", "Test DB");
+			// call populateDB
+			db.transaction(populateDB, errorCB, successCB);			
+		}
+ 
+		// inserts test data into db
+		function populateDB(tx) {
+			// drop the DEMO table if it exists
+			tx.executeSql('DROP TABLE IF EXISTS DEMO');  
+			// create DEMO table with columns id and data
+			tx.executeSql('CREATE TABLE IF NOT EXISTS DEMO (id unique, data)');
+			// insert test data into DEMO table
+			tx.executeSql('INSERT INTO DEMO (id, data) VALUES (1, "First row")');
+			tx.executeSql('INSERT INTO DEMO (id, data) VALUES (2, "Second row")');
+		} 
+ 
+		// generic error handler
+		function errorCB(tx, err) {
+		
+			navigator.notification.alert("error: " + err);
+		}
+ 
+		// success handler for db creation & population
+		function successCB() {
+			navigator.notification.alert('successfully created & populated'); 
+			// call queryDB
+			db.transaction(queryDB, errorCB); 
+		}
+ 
+		// query db for all values in the DEMO table
+		function queryDB(tx) {
+			tx.executeSql('SELECT * FROM DEMO', [], querySuccess, errorCB);
+		}
+ 
+		// display results of a success db query
+		function querySuccess(tx, results) {     
+			var len = results.rows.length;
+			// display alert with number of rows inserted into the db
+			navigator.notification.alert('rows inserted: ' + len);
+ 
+			// display each item in the recordset in its own alert
+			if (len > 0) {
+				for (var i=0;i<len;i++) {
+					navigator.notification.alert('id: ' + results.rows.item(i).id + ' data: ' + results.rows.item(i).data);
+				}
+			}
+		}		   			
+	</script>
+</head>
+<body onload="onLoad();">
+	<input type="button" onclick="createDB();" value="Test SQLite DB">
+</body>
+</html>

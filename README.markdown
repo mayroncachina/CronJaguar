@@ -9,7 +9,7 @@ Objetivo principal do aplicativo é gerenciar os treinos de um atleta de RUNNING
 2. Faça um pull request
 3. E aguarde ser aprovado pelos desenvolvedores
 
-> Os testes serão feitos com selenium mobile.
+> Os testes serão feitos com selenium.
 
 
 # Mantenedor
