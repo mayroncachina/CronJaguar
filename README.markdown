@@ -9,8 +9,6 @@ Objetivo principal do aplicativo é gerenciar os treinos de um atleta de RUNNING
 2. Faça um pull request
 3. E aguarde ser aprovado pelos desenvolvedores
 
-> Os testes serão feitos com selenium.
-
 
 # Mantenedor
 
@@ -18,6 +16,11 @@ Gabriel F. Vilar – [CoGUMm.net](http://cogumm.net)
 
 Mayron Cachina - [Cachina.com.br](http://cachina.com.br)
 
+# Screenshot
+
+!http://blog.cachina.com.br/wp-content/uploads/2011/10/foto2.png!
+
+!http://blog.cachina.com.br/wp-content/uploads/2011/10/foto1.png!
 
 
 # License
