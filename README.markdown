@@ -18,9 +18,12 @@ Mayron Cachina - [Cachina.com.br](http://cachina.com.br)
 
 # Screenshot
 
-!http://blog.cachina.com.br/wp-content/uploads/2011/10/foto2.png!
+![Tela Principal](http://blog.cachina.com.br/wp-content/uploads/2011/10/foto2.png)
 
-!http://blog.cachina.com.br/wp-content/uploads/2011/10/foto1.png!
+
+![Histórico](http://blog.cachina.com.br/wp-content/uploads/2011/10/foto1.png)
+
+
 
 
 # License
