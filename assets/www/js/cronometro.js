@@ -29,9 +29,9 @@ function chrono(){
 	//chamar o calculo de calorias
 	// Para saber qts calorias são gastas por minuto devemos dividir por 30;
 	// EX: COrrer => (325 / 30) / 60 = 0.18 
-	document.getElementById("calories").innerHTML = calculeteCalories(85,0.18) + " Calorias";
+	document.getElementById("calories").innerHTML = "<br/>" + calculeteCalories(85,0.18) + " Calorias";
 	
-	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec + ":" + msec
+	document.getElementById("chronotime").innerHTML = hr + ":" + min + ":" + sec
 	timerID = setTimeout("chrono()", 10)
 }
 
@@ -62,12 +62,12 @@ function chronoContinue(){
 }
 
 function chronoReset(){
-	document.getElementById("chronotime").innerHTML = "0:00:00:000"
+	document.getElementById("chronotime").innerHTML = "0:00:00"
 	start = new Date()
 }
 
 function chronoStopReset(){
-	document.getElementById("chronotime").innerHTML = "0:00:00:000"
+	document.getElementById("chronotime").innerHTML = "0:00:00"
 	document.chronoForm.startstop.onclick = chronoStart
 }
 
